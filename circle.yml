@@ -9,6 +9,7 @@ machine:
 dependencies:
   cache_directories:
     - "~/bin"
+    - "~/.rvm"
   pre:
     - |
       if [ ! -e "${HOME}/bin/terraform" ]; then
@@ -16,6 +17,10 @@ dependencies:
         echo "${TERRAFORM_SHA256SUM}  terraform.zip" | sha256sum -c || exit 1
         unzip -d ~/bin terraform.zip
       fi
+    - pip install pelican
+    - pip install webassets==0.10.1 cssmin
+    - gem install compass
+    - pip install s3cmd
   override:
     - |
       cat <<__EOF__ > terraform.tfvars
@@ -24,6 +29,8 @@ dependencies:
       aws_region = "${AWS_DEFAULT_REGION}"
       bucket = "null"
       __EOF__
+    - gem list
+    - pip freeze
     - terraform --version
     - pelican --version
 
@@ -36,6 +43,7 @@ test:
   override:
     - terraform plan bootstrap
     - terraform plan terraform
+    - (cd website; make publish)
 
 deployment:
   master:
@@ -45,3 +53,4 @@ deployment:
         cd terraform
         terraform remote config -backend-config "name=uchida/www.turbare.net" || exit 1
         terraform push --name uchida/www.turbare.net -var='bucket=www.turbare.net' || exit 1
+      - (cd website; make s3_upload S3_BUCKET=www.turbare.net)

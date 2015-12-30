@@ -1,0 +1,170 @@
+@charset "UTF-8";
+@import "compass/reset";
+@import "compass/css3";
+@import "compass/utilities";
+@import "compass/layout/stretching";
+@import "compass/typography/vertical_rhythm";
+
+@import url(http://fonts.googleapis.com/css?family=PT+Sans:400,700|Crimson+Text:400,600|Inconsolata);
+
+$base-font-size: 14px;
+$base-line-height: 24px;
+@include establish-baseline;
+
+body {
+    font-family: "Lucida Grande", "Calibri", "Arial", sans-serif;
+    font-weight: 400;
+    color: #3f312b;
+    background-color: #e8ecef;
+}
+a {
+    color: #d9333f;
+    background-color: inherit;
+    text-decoration: none;
+}
+h1, h2, h3, h4, h5, h6 {
+    font-family: "Myriad Pro", "PT Sans", sans-serif;
+    font-weight: 700;
+    color: #3f312b;
+}
+h1 {
+    @include adjust-font-size-to(28px);
+    @include rhythm(0, 0.25, 0, 0);
+}
+h2, h3, h4, h5, h6 {
+    @include adjust-font-size-to(22px, 5/6);
+    @include rhythm(0, 0, 0, 0);
+}
+div.container {
+    max-width: 768px;
+    margin-right: auto;
+    margin-left: auto;
+    padding: 0;
+}
+#topbar {
+    @include stretch-x;
+    top: 0;
+    font-family: "Crimson Text", serif;
+    color: #ffffff;
+    background-color: #595857;
+    a {
+        color: inherit;
+    }
+    h1.site-title{
+        font-family: "Crimson Text", serif;
+        font-weight: 600;
+        color: #ffffff;
+        @include rhythm(0, 0, 0, 0);
+        @include float-left; 
+        a {
+            color: inherit;
+        }
+    }
+    ul.nav {
+        @include horizontal-list;
+        @include float-right; 
+        @include rhythm(0, 0.75, 0, 0);
+        li {
+            list-style: none;
+        }
+    }
+}
+div.document {
+    background-color: #ffffff;
+    @include rhythm(3, 0, 0.25, 1);
+    padding-left: $base-font-size;
+    padding-right: $base-font-size;
+    border-color: #e5e4e6;
+    @include border-radius(6px);
+    p {
+        @include rhythm(0.5, 0, 0, 0.5);
+        word-break: normal;
+    }
+    p.first {
+        padding-left: $base-font-size;
+        padding-right: $base-font-size;
+        @include trailer(0);
+    }
+    p.last {
+        @include leader(0);
+        padding-left: $base-font-size;
+        padding-right: $base-font-size;
+    }
+    pre {
+        font-family: "Consolas", "Menlo", "Inconsolata", monospace;
+        background-color: #fffffc;
+        white-space: pre-wrap;
+        border-color: #e5e4e6;
+        @include adjust-font-size-to(12px, 3/4);
+        @include border-radius(4px);
+        @include rhythm-borders(2px);
+        @include rhythm(0.5, 0.125, 0.125, 0.5);
+        padding-left: $base-font-size / 2;
+        padding-right: $base-font-size / 2;
+        word-break: normal;
+    }
+    blockquote {
+        quotes: none;
+        font-family: "Palatino", serif;
+        word-break: normal;
+        border-color: #e5e4e6;
+        @include border-radius(4px);
+        @include border-radius(4px);
+        @include rhythm-borders(1px);
+        @include rhythm(0.5, 0.125, 0.125, 0.5);
+        &:before {
+            display: block;
+            width: 100%;
+            font-family: sans-serif;
+            text-align: center;
+        }
+        p {
+            display:inline;
+        }
+    }
+    ul, ol, dl, menu, table {
+        @include rhythm(0.5, 0, 0, 0.5);
+        padding-left: 2 * $base-font-size;
+        padding-right: 2 * $base-font-size;
+    }
+    ul li {
+        list-style: square;
+    }
+    th, td {
+        padding-right: $base-font-size / 2;
+    }
+    th {
+        font-weight: bold;
+    }
+    tt {
+        font-family: "Consolas", "Menlo", "Inconsolata", monospace;
+        @include adjust-font-size-to(12px, 3/4);
+    }
+    h1.entry-title {
+        border-color: #e8ecef;
+        @include trailing-border(2px, 0);
+    }
+    div.section {
+        @include rhythm(0, 0.25, 0, 0);
+    }
+    div.metadata {
+        text-align: right;
+        @include adjust-font-size-to(13px, 5/6);
+        p {
+            @include rhythm(0, 0, 0, 0);
+        }
+        address.vcard {
+            display: inline;
+        }
+    }
+    hr {
+        border-style: solid;
+        border-color: #e8ecef;
+    }
+    div.footer {
+        text-align: right;
+        address {
+            font-style: normal;
+        }
+    }
+}

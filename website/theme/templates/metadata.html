@@ -1,0 +1,39 @@
+<div class="metadata">
+{% if article %}
+    {% if article.author %}
+    by <address class="vcard author"><a class="url fn" href="{{ SITEURL }}/{{ article.author.url }}">{{ article.author }}</a></address>
+    {% endif %}
+    {% if article.license %}licensed under the {{ article.license }}{% endif %}
+    <p>
+    published: <span class="published" title="{{ article.date.isoformat() }}">{{ article.date.strftime(article.date_format) }}</span>
+    {% if article.modified %}
+    last modified: <span class="updated" title="{{ article.modified.isoformat() }}">{{ article.modified.strftime(article.date_format) }}</span>
+    {% endif %}
+    </p>
+    <p>
+    category: <a href="{{ SITEURL }}/{{ article.category.url }}" rel="tag">{{ article.category }}</a>
+    {% if article.tags %}
+    tags:
+    {% for tag in article.tags %}
+    <a href="{{ SITEURL }}/{{ tag.url }}" rel="tag">{{ tag }}</a>
+    {% endfor %}
+    {% endif %}
+    {% if article.translations %}
+    lang: <a href="{{ SITEURL }}/{{ article.url }}">{{ article.lang or DEFAULT_LANG }}</a>
+    {% for translation in article.translations %}<a href="{{ SITEURL }}/{{ translation.url }}">{{ translation.lang }}</a>{% endfor %}
+    {% endif %}
+    </p>
+{% elif page %}
+    {% if page.author %}by <address class="vcard author"><a class="url fn" href="{{ SITEURL }}/{{ page.author.url }}">{{ page.author }}</a></address>{% endif %}
+    {% if page.license %}licensed under the {{ page.license }}{% endif %}
+    {% if page.modified %}
+    <p>Last modified: <span class="updated" title="{{ page.modified.isoformat() }}">{{ page.modified.strftime(page.date_format) }}</span></p>
+    {% endif %}
+    {% if page.translations %}
+    <p>lang:
+       <a href="{{ SITEURL }}/{{ page.url }}">{{ page.lang or DEFAULT_LANG }}</a>
+       {% for translation in page.translations %}<a href="{{ SITEURL }}/{{ translation.url }}">{{ translation.lang }}</a>{% endfor %}
+    </p>
+    {% endif %}
+{% endif %}
+</div>

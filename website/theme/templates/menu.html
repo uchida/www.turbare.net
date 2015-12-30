@@ -1,0 +1,29 @@
+<div id="topbar">
+<div class="container">
+<h1 class="site-title"><a href="{{ SITEURL }}/index.html">{{ SITENAME }}</a></h1>
+{% if page %}
+{% if DISPLAY_PAGES_ON_MENU and PAGES_ON_MENU %}
+<ul class="nav">
+{% for page in PAGES %}
+{% if page.slug in PAGES_ON_MENU %}
+<li><a href="{{ SITEURL }}/{{ page.url }}">{{ page.title }}</a></li>
+{% endif %}
+{% endfor %}
+</ul>
+{% endif %}
+{% else %}
+{% if DISPLAY_PAGES_ON_MENU %}
+<ul class="nav">
+{% for page in PAGES %}
+{% if page.slug in PAGES_ON_MENU %}
+<li><a href="{{ SITEURL }}/{{ page.url }}">{{ page.title }}</a></li>
+{% endif %}
+{% endfor %}
+<li><a href="{{ SITEURL }}/archives.html">[Archives]</a></li>
+<li><a href="{{ SITEURL }}/categories.html">[Categories]</a></li>
+<li><a href="{{ SITEURL }}/tags.html">[Tags]</a></li>
+</ul>
+{% endif %}
+{% endif %}
+</div>
+</div>
