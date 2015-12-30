@@ -7,7 +7,7 @@ OUTPUTDIR=$(BASEDIR)/output
 CONFFILE=$(BASEDIR)/pelicanconf.py
 PUBLISHCONF=$(BASEDIR)/publishconf.py
 
-S3CMD_OPT=--acl-public --delete-removed --guess-mime-type --no-mime-magic --no-preserve --exclude-from exclude.txt
+S3CMD_OPT=--acl-public --delete-removed --guess-mime-type --no-mime-magic --no-preserve --exclude-from exclude.txt --reduced-redundancy
 
 RSYNC_OPT=
 
