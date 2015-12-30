@@ -1,0 +1,47 @@
+machine:
+  python:
+    version: 2.7.10
+  environment:
+    PATH: "${HOME}/bin:${PATH}"
+    TERRAFORM_URL: "https://releases.hashicorp.com/terraform/0.6.8/terraform_0.6.8_linux_amd64.zip"
+    TERRAFORM_SHA256SUM: "fd61718820c3f2334276517a89694cebe82db354b584ea90c376f1c6d34bb92d"
+
+dependencies:
+  cache_directories:
+    - "~/bin"
+  pre:
+    - |
+      if [ ! -e "${HOME}/bin/terraform" ]; then
+        curl -Lo terraform.zip "${TERRAFORM_URL}"
+        echo "${TERRAFORM_SHA256SUM}  terraform.zip" | sha256sum -c || exit 1
+        unzip -d ~/bin terraform.zip
+      fi
+  override:
+    - |
+      cat <<__EOF__ > terraform.tfvars
+      aws_access_key = "${AWS_ACCESS_KEY_ID}"
+      aws_secret_key = "${AWS_SECRET_ACCESS_KEY}"
+      aws_region = "${AWS_DEFAULT_REGION}"
+      bucket = "null"
+      __EOF__
+    - terraform --version
+    - pelican --version
+
+checkout:
+  post:
+    - git submodule init 
+    - git submodule update
+
+test:
+  override:
+    - terraform plan bootstrap
+    - terraform plan terraform
+
+deployment:
+  master:
+    branch: /master/
+    commands:
+      - |
+        cd terraform
+        terraform remote config -backend-config "name=uchida/www.turbare.net" || exit 1
+        terraform push --name uchida/www.turbare.net -var='bucket=www.turbare.net' || exit 1
