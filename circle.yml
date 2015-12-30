@@ -9,7 +9,6 @@ machine:
 dependencies:
   cache_directories:
     - "~/bin"
-    - "~/.rvm"
   pre:
     - |
       if [ ! -e "${HOME}/bin/terraform" ]; then
