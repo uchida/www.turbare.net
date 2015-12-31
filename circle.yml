@@ -13,7 +13,7 @@ dependencies:
     - |
       if [ ! -e "${HOME}/bin/terraform" ]; then
         curl -Lo terraform.zip "${TERRAFORM_URL}"
-        echo "${TERRAFORM_SHA256SUM}  terraform.zip" | sha256sum -c || exit 1
+        echo "${TERRAFORM_SHA256SUM}  terraform.zip" | sha256sum -c || exit $?
         unzip -d ~/bin terraform.zip
       fi
     - pip install pelican
@@ -42,7 +42,7 @@ test:
   override:
     - terraform plan bootstrap
     - terraform plan terraform
-    - (cd website; make publish || exit 1)
+    - (cd website; make publish || exit $?)
 
 deployment:
   master:
@@ -50,6 +50,6 @@ deployment:
     commands:
       - |
         cd terraform
-        terraform remote config -backend-config "name=uchida/www.turbare.net" || exit 1
-        terraform push --name uchida/www.turbare.net -var='bucket=www.turbare.net' || exit 1
-      - (cd website; make s3_upload S3_BUCKET=www.turbare.net)
+        terraform remote config -backend-config "name=uchida/www.turbare.net" || exit $?
+        terraform push --name uchida/www.turbare.net -var='bucket=www.turbare.net' || exit $?
+      - (cd website; make s3_upload S3_BUCKET=www.turbare.net || exit $?)
