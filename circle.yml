@@ -42,7 +42,7 @@ test:
   override:
     - terraform plan bootstrap
     - terraform plan terraform
-    - (cd website; make publish)
+    - (cd website; make publish || exit 1)
 
 deployment:
   master:
