@@ -37,8 +37,8 @@ DISPLAY_PAGES_ON_MENU = True
 #          ('You can modify those links in your config file', '#'),)
 #
 ## Social widget
-#SOCIAL = (('You can add links in your config file', '#'),
-#          ('Another social link', '#'),)
+SOCIAL = (('github', 'https://github.com/uchida'),
+          ('twitter', 'https://twitter.com/auchida'),)
 
 DEFAULT_PAGINATION = 3
 

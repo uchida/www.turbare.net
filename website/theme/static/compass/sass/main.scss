@@ -162,9 +162,19 @@ div.document {
         border-color: #e8ecef;
     }
     div.footer {
-        text-align: right;
-        address {
-            font-style: normal;
+        @include clearfix;
+        ul.nav {
+            @include float-right;
+            @include horizontal-list;
+            @include rhythm(0, 0.75, 0, 0);
+            padding: 0;
+            color: #3f312b;
+            li {
+                list-style: none;
+            }
+            a {
+                color: inherit;
+            }
         }
     }
 }

@@ -10,6 +10,7 @@
 {% assets filters="cssmin", output="css/pygments.min.css", "css/pygments.css" %}
 <link rel="stylesheet" href="{{ SITEURL }}/{{ ASSET_URL }}">
 {% endassets %}
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 {% if FEED_ALL_ATOM %}
 <link href="{{ SITEURL }}/{{ FEED_ALL_ATOM }}" type="application/atom+xml" rel="alternate" title="{{ SITENAME }} ATOM Feed">
 {% endif %}
@@ -35,9 +36,13 @@
 {% block content %}{% endblock %}
 <hr>
 <div class="footer">
-<address>
-Proudly powered by <a href="http://getpelican.com/">Pelican</a>, which takes great advantage of <a href="http://python.org">Python</a>.
-</address>
+{% if SOCIAL %}
+<ul class="nav">
+{% for name, link in SOCIAL %}
+<li><a href="{{ link }}" target="_blank"><i class="fa fa-{{ name }}"></i></a></li>
+{% endfor %}
+</ul>
+{% endif %}
 </div>
 </div>
 </div>
