@@ -66,6 +66,7 @@ PLUGINS = [
 	'assets',
 	'myplugins.jp_textjoin',
 	'myplugins.global_license_on_page',
+	'myplugins.rst2html5',
 ]
 
 ASSET_CONFIG = (('COMPASS_CONFIG', {'environment': ':production', 'line_comments': False}),)
