@@ -64,6 +64,7 @@ USE_MATHJAX = True
 PLUGIN_PATHS = ['./pelican-plugins']
 PLUGINS = [
     'assets',
+    'tag_cloud',
     'myplugins.jp_textjoin',
     'myplugins.global_license_on_page',
     'myplugins.rst2html5',
