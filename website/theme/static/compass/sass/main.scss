@@ -47,56 +47,6 @@ div.container {
     margin-right: auto;
     margin-left: auto;
 }
-header.global-header {
-    @include stretch-x;
-    top: 0;
-    margin-right: auto;
-    margin-left: auto;
-    font-family: "Crimson Text", serif;
-    color: #ffffff;
-    background-color: #595857;
-    a {
-        color: inherit;
-    }
-    h1.site-title{
-        font-family: "Crimson Text", serif;
-        font-weight: 600;
-        color: #ffffff;
-        @include rhythm(0, 0, 0, 0);
-        @include float-left; 
-        a {
-            color: inherit;
-        }
-    }
-    ul {
-        @include horizontal-list;
-        @include float-right; 
-        @include rhythm(0, 0.75, 0, 0);
-        li {
-            list-style: none;
-        }
-    }
-}
-footer.global-footer {
-    @include clearfix;
-    ul {
-        @include horizontal-list;
-        @include float-right; 
-        @include rhythm(0, 0.75, 0, 0);
-        li {
-            list-style: none;
-        }
-        @include adjust-font-size-to(22px, 5/6);
-        padding-top: 0;
-        padding-bottom: 0;
-        padding-left: $base-font-size;
-        padding-right: $base-font-size;
-        color: #3f312b;
-        a {
-            color: inherit;
-        }
-    }
-}
 main.content {
     max-width: 768px;
     margin-right: auto;
@@ -172,6 +122,9 @@ main.content {
         font-family: "Consolas", "Menlo", "Inconsolata", monospace;
         @include adjust-font-size-to(14px, 3/4);
     }
+    div.section {
+        @include rhythm(0.75, 0, 0, 1);
+    }
     article, section {
         @include rhythm(0, 0.25, 0, 0);
         padding-left: $base-font-size;
@@ -189,6 +142,56 @@ main.content {
         }
         address.vcard {
             display: inline;
+        }
+    }
+}
+header.global-header {
+    @include stretch-x;
+    top: 0;
+    margin-right: auto;
+    margin-left: auto;
+    font-family: "Crimson Text", serif;
+    color: #ffffff;
+    background-color: #595857;
+    a {
+        color: inherit;
+    }
+    h1.site-title{
+        font-family: "Crimson Text", serif;
+        font-weight: 600;
+        color: #ffffff;
+        @include rhythm(0, 0, 0, 0);
+        @include float-left; 
+        a {
+            color: inherit;
+        }
+    }
+    ul {
+        @include horizontal-list;
+        @include float-right; 
+        @include rhythm(0, 0.75, 0, 0);
+        li {
+            list-style: none;
+        }
+    }
+}
+footer.global-footer {
+    @include clearfix;
+    ul {
+        @include horizontal-list;
+        @include float-right; 
+        @include rhythm(0, 0.75, 0, 0);
+        li {
+            list-style: none;
+        }
+        @include adjust-font-size-to(22px, 5/6);
+        padding-top: 0;
+        padding-bottom: 0;
+        padding-left: $base-font-size;
+        padding-right: $base-font-size;
+        color: #3f312b;
+        a {
+            color: inherit;
         }
     }
 }

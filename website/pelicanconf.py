@@ -73,3 +73,5 @@ ASSET_CONFIG = (('COMPASS_CONFIG', {'environment': ':production', 'line_comments
 
 # setting for global_license
 LICENSE = '<a href="http://creativecommons.org/licenses/by/4.0/" rel="license">CC-BY 4.0</a>'
+
+DOCUTILS_SETTINGS = {'initial_header_level' : 3}
