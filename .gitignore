@@ -1,3 +1,5 @@
 terraform.tfvars
 *.tfstate
 *.tfstate.backup
+website/*.pid
+website/output/*
