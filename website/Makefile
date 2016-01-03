@@ -47,7 +47,7 @@ $(OUTPUTDIR)/%.html:
 	$(PELICAN) $(INPUTDIR) -o $(OUTPUTDIR) -s $(CONFFILE) $(PELICANOPTS)
 
 clean:
-	find $(OUTPUTDIR) -mindepth 1 -delete
+	find $(OUTPUTDIR) -mindepth 1 ! -name '.gitkeep' -delete
 
 regenerate: clean
 	$(PELICAN) -r $(INPUTDIR) -o $(OUTPUTDIR) -s $(CONFFILE) $(PELICANOPTS)
