@@ -27,23 +27,31 @@ h1, h2, h3, h4, h5, h6 {
     font-weight: 700;
     color: #3f312b;
 }
-h1 {
+h1, h2 {
     @include adjust-font-size-to(28px);
     @include rhythm(0, 0.25, 0, 0);
 }
-h2, h3, h4, h5, h6 {
+h3, h4, h5, h6 {
     @include adjust-font-size-to(22px, 5/6);
     @include rhythm(0, 0, 0, 0);
+}
+dl.docinfo { display: none; }
+hr {
+    border-style: solid;
+    border-color: #e8ecef;
+    margin-left: $base-font-size;
+    margin-right: $base-font-size;
 }
 div.container {
     max-width: 768px;
     margin-right: auto;
     margin-left: auto;
-    padding: 0;
 }
-#topbar {
+header.global-header {
     @include stretch-x;
     top: 0;
+    margin-right: auto;
+    margin-left: auto;
     font-family: "Crimson Text", serif;
     color: #ffffff;
     background-color: #595857;
@@ -60,7 +68,7 @@ div.container {
             color: inherit;
         }
     }
-    ul.nav {
+    ul {
         @include horizontal-list;
         @include float-right; 
         @include rhythm(0, 0.75, 0, 0);
@@ -69,11 +77,32 @@ div.container {
         }
     }
 }
-div.document {
+footer.global-footer {
+    @include clearfix;
+    ul {
+        @include horizontal-list;
+        @include float-right; 
+        @include rhythm(0, 0.75, 0, 0);
+        li {
+            list-style: none;
+        }
+        @include adjust-font-size-to(22px, 5/6);
+        padding-top: 0;
+        padding-bottom: 0;
+        padding-left: $base-font-size;
+        padding-right: $base-font-size;
+        color: #3f312b;
+        a {
+            color: inherit;
+        }
+    }
+}
+main.content {
+    max-width: 768px;
+    margin-right: auto;
+    margin-left: auto;
     background-color: #ffffff;
     @include rhythm(3, 0, 0.25, 1);
-    padding-left: $base-font-size;
-    padding-right: $base-font-size;
     border-color: #e5e4e6;
     @include border-radius(6px);
     p {
@@ -129,6 +158,9 @@ div.document {
     }
     ul li {
         list-style: square;
+        p {
+            margin: 0;
+        }
     }
     th, td {
         padding-right: $base-font-size / 2;
@@ -136,18 +168,20 @@ div.document {
     th {
         font-weight: bold;
     }
-    tt {
+    span.literal {
         font-family: "Consolas", "Menlo", "Inconsolata", monospace;
         @include adjust-font-size-to(14px, 3/4);
     }
-    h1.entry-title {
-        border-color: #e8ecef;
-        @include trailing-border(2px, 0);
-    }
-    div.section {
+    article, section {
         @include rhythm(0, 0.25, 0, 0);
+        padding-left: $base-font-size;
+        padding-right: $base-font-size;
     }
-    div.metadata {
+    article h2.p-name {
+        @include trailing-border(2px, 0);
+        border-color: #e8ecef;
+    }
+    footer.metadata {
         text-align: right;
         @include adjust-font-size-to(14px, 5/6);
         p {
@@ -155,27 +189,6 @@ div.document {
         }
         address.vcard {
             display: inline;
-        }
-    }
-    hr {
-        border-style: solid;
-        border-color: #e8ecef;
-    }
-    div.footer {
-        @include clearfix;
-        ul.nav {
-            @include float-right;
-            @include horizontal-list;
-            @include rhythm(0, 0.75, 0, 0);
-            @include adjust-font-size-to(22px, 5/6);
-            padding: 0;
-            color: #3f312b;
-            li {
-                list-style: none;
-            }
-            a {
-                color: inherit;
-            }
         }
     }
 }

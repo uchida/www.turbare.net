@@ -1,13 +1,13 @@
-<div class="metadata">
+<footer class="metadata">
 {% if article %}
     {% if article.author %}
-    by <address class="vcard author"><a class="url fn" href="{{ SITEURL }}/{{ article.author.url }}">{{ article.author }}</a></address>
+    by <a class="p-author h-card" href="{{ SITEURL }}/{{ article.author.url }}">{{ article.author }}</a>
     {% endif %}
     {% if article.license %}licensed under the {{ article.license }}{% endif %}
     <p>
-    published: <span class="published" title="{{ article.date.isoformat() }}">{{ article.date.strftime(article.date_format) }}</span>
+    published: <time class="dt-published" datetime="{{ article.date.isoformat() }}">{{ article.date.strftime(article.date_format) }}</time>
     {% if article.modified %}
-    last modified: <span class="updated" title="{{ article.modified.isoformat() }}">{{ article.modified.strftime(article.date_format) }}</span>
+    last modified: <time class="dt-updated" datetime="{{ article.modified.isoformat() }}">{{ article.modified.strftime(article.date_format) }}</time>
     {% endif %}
     </p>
     <p>
@@ -24,10 +24,10 @@
     {% endif %}
     </p>
 {% elif page %}
-    {% if page.author %}by <address class="vcard author"><a class="url fn" href="{{ SITEURL }}/{{ page.author.url }}">{{ page.author }}</a></address>{% endif %}
+    {% if page.author %}by <a class="p-author h-card" href="{{ SITEURL }}/{{ page.author.url }}">{{ page.author }}</a>{% endif %}
     {% if page.license %}licensed under the {{ page.license }}{% endif %}
     {% if page.modified %}
-    <p>Last modified: <span class="updated" title="{{ page.modified.isoformat() }}">{{ page.modified.strftime(page.date_format) }}</span></p>
+    <p>Last modified: <time class="dt-updated" title="{{ page.modified.isoformat() }}">{{ page.modified.strftime(page.date_format) }}</time></p>
     {% endif %}
     {% if page.translations %}
     <p>lang:
@@ -36,4 +36,4 @@
     </p>
     {% endif %}
 {% endif %}
-</div>
+</footer>

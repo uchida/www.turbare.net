@@ -2,15 +2,11 @@
 {% block content %}
 {% if articles %}
 {% for article in articles_page.object_list %}
-<div class="hentry">
-<h1 class="entry-title" id="{{ article.slug }}">
-<a rel="bookmark" href="{{ SITEURL }}/{{ article.url }}">{{ article.title }}</a>
-</h1>
-<div class="entry-content">
+<article class="h-entry xfolkentry">
+<h2 class="p-name" id="{{ article.slug }}"><a rel="bookmark" href="{{ SITEURL }}/{{ article.url }}">{{ article.title }}</a></h2>
 {{ article.content }}
-</div>
 {% include "metadata.html" %}
-</div>
+</article>
 {% endfor %}
 {% include 'pagination.html' %}
 {% endif %}

@@ -1,13 +1,11 @@
 {% extends "base.html" %}
 {% block title %} {{ article.title }} - {{ SITENAME }} {% endblock %}
 {% block content %}
-<div class="hentry">
-<h1 class="entry-title" id="{{ article.slug }}">
-<a rel="bookmark" href="{{ SITEURL }}/{{ article.url }}">{{ article.title }}</a>
-</h1>
-<div class="entry-content">
+<article class="h-entry">
+<h2 class="p-title" id="{{ article.slug }}"><a rel="bookmark" href="{{ SITEURL }}/{{ article.url }}">{{ article.title }}</a></h2>
+<div class="e-content">
 {{ article.content }}
 </div>
 {% include "metadata.html" %}
-</div>
+</article>
 {% endblock %}
