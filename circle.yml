@@ -18,7 +18,7 @@ dependencies:
       fi
     - pip install pelican
     - pip install webassets==0.10.1 cssmin
-    - pip install svn+http://svn.code.sf.net/p/docutils/code/trunk/docutils#egg=docutils
+    - pip install --upgrade svn+http://svn.code.sf.net/p/docutils/code/trunk/docutils#egg=docutils
     - gem install compass
     - pip install s3cmd
   override:
