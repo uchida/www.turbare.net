@@ -144,6 +144,10 @@ main.content {
             display: inline;
         }
     }
+    aside.paginator {
+        padding-left: $base-font-size;
+        padding-right: $base-font-size;
+    }
 }
 header.global-header {
     @include stretch-x;

@@ -1,6 +1,5 @@
 {% extends "base.html" %}
 {% block content %}
-{% if articles %}
 {% for article in articles_page.object_list %}
 <article class="h-entry xfolkentry">
 <h2 class="p-name" id="{{ article.slug }}"><a rel="bookmark" href="{{ SITEURL }}/{{ article.url }}">{{ article.title }}</a></h2>
@@ -8,6 +7,7 @@
 {% include "metadata.html" %}
 </article>
 {% endfor %}
+{% if DEFAULT_PAGINATION %}
 {% include 'pagination.html' %}
 {% endif %}
 {% endblock content %}

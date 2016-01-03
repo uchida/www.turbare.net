@@ -5,9 +5,7 @@
 <h2>Tags</h2>
 <ul class="tags">
 {% for tag in tag_cloud %}
-<li class="tag-{{ tag.1 }}">
-<a class="tag-cloud" href="{{ SITEURL }}/{{ tag.0.url }}" rel="tag">{{ tag.0 }}</a>
-</li>
+<li class="tag-{{ tag.1 }}"><a class="tag-cloud" href="{{ SITEURL }}/{{ tag.0.url }}" rel="tag">{{ tag.0 }}</a></li>
 {% endfor %}
 </ul>
 </section>
