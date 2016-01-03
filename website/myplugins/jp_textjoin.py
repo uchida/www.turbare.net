@@ -9,10 +9,10 @@ def is_fullwidth(c):
 def is_punctuation(c):
     return c != '' and unicodedata.category(c).startswith('P')
 
-def to_be_joined(end_of_last_line, begin_of_line):
-    if is_punctuation(end_of_last_line) and is_fullwidth(end_of_last_line):
+def to_be_joined(tail, head):
+    if is_punctuation(tail) and is_fullwidth(head):
         return True
-    if is_fullwidth(end_of_last_line) and is_fullwidth(begin_of_line):
+    if is_fullwidth(tail) and is_fullwidth(head):
         return True
     return False
 
@@ -24,15 +24,14 @@ class JapaneseTextJoin(docutils.transforms.Transform):
             if (isinstance(text.parent, docutils.nodes.literal_block) or
                 isinstance(text.parent, docutils.nodes.raw)):
                 continue
-            lines = []
-            end_of_last_line = ''
+            tail, lines = '', []
             for line in text.astext().splitlines():
-                begin_of_line = line[0] if len(line) > 0 else ''
-                if to_be_joined(end_of_last_line, begin_of_line):
+                head = line[0] if len(line) > 0 else ''
+                if to_be_joined(tail, head):
                     lines[-1] += line
                 else:
                     lines.append(line)
-                end_of_last_line = line[-1] if len(line) > 0 else ''
+                tail = line[-1] if len(line) > 0 else ''
             if text.astext()[-1] == '\n':
                 lines.append('\n')
             joined_text = docutils.nodes.Text('\n'.join(lines), text.rawsource)
