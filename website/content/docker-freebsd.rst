@@ -23,9 +23,6 @@ Docker といいつつ実態はもちろん jail なので FreeBSD のイメー�
 イメージが Docker Hub 上に既に上がっています。
 ただ、これらのイメージ作成方法を探しても見つからなかったので、用意してみました。
 
-FreeBSD 上で FreeBSD 動かすなら jail でいいのではという気がしたりしますが、
-docker-compose や docker-swarm とかと組み合わせられる点は割とメリットがあると思います。
-
 基本的には jail なので kernel は不要で FreeBSD でのユーザランド相当、
 base.txz や lib32.txz とかがあれば動きそうなので、これらを展開して
 (展開までに bsdinstall jail とか使う方法とかもあります)
@@ -42,6 +39,7 @@ tar で固め直して docker import したら動くイメージが作れるよ�
    $ cat docker-freebsd-10.2.tgz | docker import - freebsd
    $ docker run -it freebsd /bin/sh
    % freebsd-version
+   10.2-RELEASE
 
 あと展開したファイルに schg フラグがついていたりして削除が面倒、という側面もあります。
 
@@ -65,6 +63,9 @@ tar で固め直して docker import したら動くイメージが作れるよ�
 この方法で Dockerfile を github に公開して `uchida/docker-freebsd <https://github.com/uchida/docker-freebsd>`_
 Docker Hub にも `auchida/freebsd <https://hub.docker.com/r/auchida/freebsd/>`_ で上げてみました。
 
-ただ `kazuyoshi/freebsd-minimal <https://hub.docker.com/r/kazuyoshi/freebsd-minimal/>` はサイズ 4MB 程度なので、
+ただ `kazuyoshi/freebsd-minimal <https://hub.docker.com/r/kazuyoshi/freebsd-minimal/>`_ はサイズ 4MB 程度なので、
 もっと中身を削ってサイズは縮められそう。
+
+FreeBSD 上で FreeBSD 動かすなら jail でいいのではという気がしたりしますが、
+docker-compose や docker-swarm とかと組み合わせられる点は割とメリットがあると思います。
 
