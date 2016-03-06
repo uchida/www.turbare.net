@@ -41,10 +41,9 @@ tar で固め直して docker import したら動くイメージが作れるよ�
    % freebsd-version
    10.2-RELEASE
 
-あと展開したファイルに schg フラグがついていたりして削除が面倒、という側面もあります。
-
-あと根本的にはこの方法だと Dockerfile を作って Automated build できないし、作り方を明示的に共有できない。
-ということで公式イメージとかがよく使う手を使って Dockerfile 化。
+ただ、この方法は展開したファイルに schg フラグがついていたりして削除が面倒だったり、
+Automated build もできない。
+ということで公式イメージとかがよく使う手 (tar を ADD して展開させる方法) を使って Dockerfile 化。
 
 .. code-block:: console
 
