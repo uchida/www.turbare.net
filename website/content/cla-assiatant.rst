@@ -3,7 +3,7 @@
 CLA assistant
 =============
 
-:date: 2015-03-19
+:date: 2016-03-19
 :author: Akihiro Uchida
 :tags: license
 :category: memo
