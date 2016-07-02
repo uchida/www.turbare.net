@@ -16,6 +16,8 @@ dependencies:
         echo "${TERRAFORM_SHA256SUM}  terraform.zip" | sha256sum -c || exit $?
         unzip -d ~/bin terraform.zip
       fi
+    - sudo apt-get update
+    - sudo apt-get install -y subversion
     - pip install pelican
     - pip install webassets==0.10.1 cssmin
     - pip install --upgrade svn+http://svn.code.sf.net/p/docutils/code/trunk/docutils@7945#egg=docutils
