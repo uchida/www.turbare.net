@@ -46,6 +46,7 @@ STATIC_PATHS = [
     'extra/robots.txt',
     'extra/favicon.ico',
     'extra/public_key.asc',
+    'extra/keybase.txt',
 ]
 
 EXTRA_PATH_METADATA = { 
