@@ -1,0 +1,74 @@
+==================================================================
+https://keybase.io/uchida
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of http://turbare.net
+    * I am uchida (https://keybase.io/uchida) on keybase.
+      * I have a public key with fingerprint 0B52 06F3 41EE ED89 6021  7423 FDE3 1684 6BF3 F057
+
+      To do so, I am signing this object:
+
+{
+      "body": {
+                "key": {
+                              "eldest_kid": "0101e76872cd23a7459ab5cf8b1ce07f841dec00845b548526d8abfd0826a423a52a0a",
+                                          "fingerprint": "0b5206f341eeed8960217423fde316846bf3f057",
+                                                      "host": "keybase.io",
+                                                                  "key_id": "fde316846bf3f057",
+                                                                              "kid": "0101e76872cd23a7459ab5cf8b1ce07f841dec00845b548526d8abfd0826a423a52a0a",
+                                                                                          "uid": "57360f0dc3c1cbdc402aee75f3208619",
+                                                                                                      "username": "uchida"
+                                                                                                                },
+                        "service": {
+                                      "hostname": "turbare.net",
+                                                  "protocol": "http:"
+                                                            },
+                                "type": "web_service_binding",
+                                        "version": 1
+                                              },
+          "ctime": 1467438306,
+              "expire_in": 157680000,
+                  "prev": "da55d5527e54f752652ae5601622b7c2acd5c8a024a332b368a199121794682e",
+                      "seqno": 4,
+                          "tag": "signature"
+}
+
+which yields the signature:
+
+-----BEGIN PGP MESSAGE-----
+
+owGtUm1QVFUY3g8IZMRoY1aMj+iuRQwf3u97F3KZqLECgTH5sAjx3HvPhdvi7rJ7
+F0Fa0FS0VgUHxXJqifzAHEqYjJzA1GCmbbAkZmRodEaTCiymISDGbJDOZexfPzt/
+zpz3fZ7nPM97TkukUReuXxg377bPTpfoh+4IupJtRVn1mOCU6rCMeswOlzZYJUGP
+Wm5XJCwDwwmcgBzLc6QokRTgaMYKBEaUeYEQIc7JPE1IUMRxnmYEhuYZkpV4IMgS
+zpMsoBGDIQEOsFRMVhwV0O1yKw5VkxUYEmdliiYghBJvZXGS4BBcliBFsDzNCjIl
+4wyHiJVOj8ZA5gTggemKE9XQoXzJ3n/g/2ff3iU5hqNYXMYlkRIJUZBEGicBhBwj
+UyTOs4RVA3qg2wG2QoT2ipWKBDBfKoZqNYoItbFqOR70Va9bAG6Y7oAqIrrcTtUp
+OqtQo1JVXRkaT61zacBtUCh/IFEuKA4JzRARaqDbozgdWAaBkKKqaJoEzXI0xVM4
+m4rBWpfihuWKhmDQDHC0tGtgDZKUAMNIDENykCmkZQ4FR0khw+IES5ICJ5JAlBiR
+BzhJA4oiBYrlAWG1Euh9rDTLkxDTUlU7nFgGjXyCCqTpUSocAIWCmC/iLUNciE4f
+rnso1KD9Ll3Esqh/v9wPMQ8v2n1n1uX/lHuqIyImMufo+ymxa4zzk+sbve2xR3bS
+WTYqd/pae4SlKJiWvpCQuC+xaXA2K/+krbng980veBLf6x3fxfXvvWfRV1/6dmPx
++QnzsuWdqWNp0TmRUfu7cp3PHPz+JVP2I/MjmV1tve/GNx/iVEMWuSFkYuWVTbc+
+HLQctdZtv1iwq+PcK8M2I9l6fGrmetRuy3Ro3V+ublv8QIyvylhkwd8ZSJg6/pFv
+str0RwvZ9mPez61vbPic6vBUH9oyVPPl4J9xV42Bxwzmi4W1T4d4V93kjo23vvnZ
+psXZUk/KlrHpzgNzV0r8jWMNcyNUSjU0h4Kw57eXZJ/+4JfFG3k7osNqe08E/27p
+usbdt8F7m4XR1GMXfGvbIpOfS/ZvvZkwPjxJBM4W9vVwEdCcM0A3dhQ4vjvPz9jT
++7pA2an+slvC6bZ+zDfqfzl5r3PPnO23T9YeblpjunwpUzcS/8Wjj7de7ravMhrG
+1RPFSYGVTaPXw5KyM2VT24pfn52Kv/9qTllD56fBGz1YcvLQE5O39z+50zy0aDmT
+t7q78O3iNHP9gaK52G9m1r1+Ftz1387uqSOXN3xV8lRV3uTqBXeKCcO6Tzb78j/2
+l+rvnAtcGJ5e0RHt7soMhqRUbOxjD64P0hNSZPjdrw/j86XEkRf9ryW118Yx4cPt
+g8VZtqv7doT1B/4B
+=EyzK
+-----END PGP MESSAGE-----
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/uchida
+
+==================================================================
+
+

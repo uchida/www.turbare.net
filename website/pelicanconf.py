@@ -52,6 +52,7 @@ EXTRA_PATH_METADATA = {
     'extra/robots.txt': {'path': 'robots.txt'},
     'extra/favicon.ico': {'path': 'favicon.ico'},
     'extra/public_key.asc': {'path': 'public_key.asc'},
+    'extra/keybase.txt': {'path': 'keybase.txt'},
 }
 
 IGNORE_FILES = ['.#*']
